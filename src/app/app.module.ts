@@ -3,6 +3,7 @@ import { NgModule, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+// Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
@@ -13,11 +14,14 @@ import { ServerComponent } from './servers/server/server.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 
+// Services
 import { ServersService } from './servers/servers.service';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
 import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
+import { ServerResolver } from './servers/server/server-resolver.service';
 
+// Routing Module
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -38,7 +42,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ ServersService, AuthGuard, AuthService, CanDeactivateGuard ],
+  providers: [ ServersService, AuthGuard, AuthService, CanDeactivateGuard, ServerResolver ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
